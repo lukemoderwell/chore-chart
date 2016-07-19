@@ -104,7 +104,7 @@ li.checked .text {
   text-decoration: line-through; }
 
 li.private {
-  background: #eee;
+  background: #000;
   border-color: #ddd; }
 
 header .hide-completed {
