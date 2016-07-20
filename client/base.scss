@@ -2,13 +2,11 @@
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    -webkit-transition: all .35s ease-in-out; 
+    -webkit-transition: all .3s ease-in-out; 
 }
 
-
-
 body {
-  font-family: sans-serif;
+  font-family: $sans;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -27,7 +25,7 @@ body {
 }
  
 header {
-  background: #ccc;
+  background: #E0e0e0;
   padding: 24px;
   position: relative;
 }
@@ -38,6 +36,7 @@ header {
  
 h1 {
   font-size: 24px;
+  font-weight: 600; 
   margin: 0;
   display: inline-block;
 }
@@ -58,36 +57,39 @@ form {
  
 .new-task input {
   padding: 24px;
-  background: transparent;
+  background: #ffffff;
   border: none;
   width: 100%;
   font-size: 16px;
-  border-top: 1px solid #ccc;
+  box-shadow: 0 -1px 2px rgba(0,0,0,.1);
+  z-index: 1;
 }
  
 .new-task input:focus{
   outline: 0;
-  border-top: 1px solid salmon;
+  box-shadow: 0 -1px 4px rgba(0,0,0,.2);
   color: salmon; 
 }
 
-.new-task button {
+.submit {
   position: absolute;
   top: 0;
   right: 24px;
   padding: 24px 0 24px;  
-  font-size: 14px; 
+  font-size: 14px;
   background: transparent; 
   border: 0;
   text-transform: uppercase;
   letter-spacing: 1px; 
   color: salmon; 
+  outline: 0; 
   &:hover {
     text-decoration: underline;
     color: darken(salmon, 20%);
     cursor: pointer; 
   }
 }
+
  
 ul {
   margin: 0;
@@ -116,7 +118,7 @@ li .text {
 }
  
 li.checked {
-  padding-left: 60px;
+  padding-left: 40px;
   color: #888;
   background: rgba(0,0,0,.05);
 }
@@ -132,11 +134,23 @@ li.private {
 }
  
 header .hide-completed {
+  margin-top: 10px;
   float: right;
 }
  
 .toggle-private {
   margin-left: 5px;
+  text-transform: uppercase; 
+  outline: 0; 
+  border-radius: 4px;
+  background: #fff;
+  border: 1px solid #ccc; 
+  letter-spacing: .5px; 
+  box-shadow: 1px 1px 2px rgba(0,0,0,.05);
+  &:hover {
+    cursor: pointer; 
+    background: #fafafa;
+  }
 }
 
 .user {

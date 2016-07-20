@@ -1,11 +1,13 @@
 <head>
-  <title>Moderwell Chore Chart</title>
+  <title>Moderwell Todos</title>
+  <!-- Fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Space+Mono:400,400italic,700' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
   <div class="container">
     <header>
-      <h1>Moderwell Family Chores <span class="incomplete">({{incompleteCount}})</span></h1>
+      <h1>Moderwell Family Dos <span class="incomplete">({{incompleteCount}})</span></h1>
 
       <label class="hide-completed">
         <input type="checkbox" />
@@ -25,8 +27,8 @@
     <footer>
       {{#if currentUser}}
       <form class="new-task">
-        <input type="text" name="text" placeholder="Type to add a chore" />
-        <button class="btn" type="submit" name="submit">Add Chore</button>
+        <input type="text" name="text" placeholder="What's your task?" />
+        <button class="btn submit" type="submit" name="submit">Add To List</button>
       </form>
       {{/if}}
     </footer>
