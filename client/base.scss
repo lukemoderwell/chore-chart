@@ -6,7 +6,7 @@
 }
 
 body {
-  font-family: $sans;
+  font-family: $mono;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -14,31 +14,53 @@ body {
   right: 0;
   padding: 0;
   margin: 0;
-  font-size: 16px;
+  font-size: 14px;
 }
  
 .container { 
-  width: 100%; 
+  width: 95%; 
   margin: 0 auto;
   min-height: 100%;
   background: white;
 }
  
 header {
-  background: #E0e0e0;
+  background: rgba(253,145,138,1);
   padding: 24px;
   position: relative;
+}
+
+.header-inner {
+  width: 95%;
+  margin: 0 auto;
 }
  
 #login-buttons {
   display: block;
 }
+
+.login {
+  float: right;
+  text-decoration: none; 
+  padding: 10px 12px;
+  font-family: $mono;
+  text-transform: uppercase;
+  background: transparent;
+  border: 1px solid rgba(0,0,0,.9);
+}
  
 h1 {
-  font-size: 24px;
-  font-weight: 600; 
+  font-family: $serif;
+  font-size: 22px; 
+  color: #fff;
   margin: 0;
   display: inline-block;
+}
+
+.incomplete {
+  font-size: 18px; 
+  font-family: $sans; 
+  font-weight: 300;   
 }
 
 // Form Footer
@@ -116,7 +138,7 @@ li {
 input[type="checkbox"] {
   -moz-transform: scale(1.3,1.3);
   -webkit-transform: scale(1.3,1.3);
-  transform:scale(1.3, 1.2);
+  transform:scale(1.3, 1.3);
 }
  
 li .text {
@@ -126,7 +148,6 @@ li .text {
 li.checked {
   padding-left: 40px;
   color: #888;
-  background: rgba(0,0,0,.05);
 }
  
 li.checked .text {
@@ -140,8 +161,10 @@ li.private {
 }
  
 header .hide-completed {
-  margin-top: 10px;
-  float: right;
+  position: absolute; 
+  margin-top: 8px;
+  right: 160px; 
+  font-family: $mono;
 }
  
 .toggle-private {

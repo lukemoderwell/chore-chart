@@ -4,22 +4,28 @@
   <title>Moderwell Todos</title>
   <!-- Fonts -->
   <link href='https://fonts.googleapis.com/css?family=Space+Mono:400,400italic,700' rel='stylesheet' type='text/css'>
+
+  <script src="https://use.typekit.net/heo6ofs.js"></script>
+  <script>try{Typekit.load({ async: true });}catch(e){}</script>
+
 </head>
 
 <body>
-  <div class="container">
-    <header>
+  <header>
+    <div class="header-inner">
       <h1>Moderwell Todos <span class="incomplete">({{incompleteCount}})</span></h1>
 
       <label class="hide-completed">
         <input type="checkbox" />
-        Hide Completed Tasks
+        Hide Completed
       </label>
-    
-      {{> loginButtons}}
-    
-    </header>
- 
+      
+      <button class="login">
+        {{> loginButtons}}
+      </button>
+    </div>
+  </header>
+  <div class="container">
     <ul>
       {{#each tasks}}
         {{> task}}

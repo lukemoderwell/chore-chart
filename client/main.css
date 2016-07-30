@@ -5,7 +5,7 @@
   -webkit-transition: all .3s ease-in-out; }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: "droid-sans-mono", mono;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -13,27 +13,46 @@ body {
   right: 0;
   padding: 0;
   margin: 0;
-  font-size: 16px; }
+  font-size: 14px; }
 
 .container {
-  width: 100%;
+  width: 95%;
   margin: 0 auto;
   min-height: 100%;
   background: white; }
 
 header {
-  background: #E0e0e0;
+  background: #fd918a;
   padding: 24px;
   position: relative; }
+
+.header-inner {
+  width: 95%;
+  margin: 0 auto; }
 
 #login-buttons {
   display: block; }
 
+.login {
+  float: right;
+  text-decoration: none;
+  padding: 10px 12px;
+  font-family: "droid-sans-mono", mono;
+  text-transform: uppercase;
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.9); }
+
 h1 {
-  font-size: 24px;
-  font-weight: 600;
+  font-family: "minion-pro", Georgia, serif;
+  font-size: 22px;
+  color: #fff;
   margin: 0;
   display: inline-block; }
+
+.incomplete {
+  font-size: 18px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-weight: 300; }
 
 footer {
   position: fixed;
@@ -98,15 +117,14 @@ li {
 input[type="checkbox"] {
   -moz-transform: scale(1.3, 1.3);
   -webkit-transform: scale(1.3, 1.3);
-  transform: scale(1.3, 1.2); }
+  transform: scale(1.3, 1.3); }
 
 li .text {
   margin-left: 10px; }
 
 li.checked {
   padding-left: 40px;
-  color: #888;
-  background: rgba(0, 0, 0, 0.05); }
+  color: #888; }
 
 li.checked .text {
   text-decoration: line-through; }
@@ -117,8 +135,10 @@ li.private {
   color: #f0f0f0; }
 
 header .hide-completed {
-  margin-top: 10px;
-  float: right; }
+  position: absolute;
+  margin-top: 8px;
+  right: 160px;
+  font-family: "droid-sans-mono", mono; }
 
 .toggle-private {
   margin-left: 5px;
