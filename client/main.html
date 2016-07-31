@@ -2,8 +2,10 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>Moderwell Todos</title>
+
+  <!-- Drag n Drop CSS -->
+  <link href='http://localhost:8000/node_modules/dragula/dist/dragula.css' rel='stylesheet' type='text/css'>
   <!-- Fonts -->
-  <link href='https://fonts.googleapis.com/css?family=Space+Mono:400,400italic,700' rel='stylesheet' type='text/css'>
 
   <script src="https://use.typekit.net/heo6ofs.js"></script>
   <script>try{Typekit.load({ async: true });}catch(e){}</script>
@@ -26,21 +28,23 @@
     </div>
   </header>
   <div class="container">
-    <ul>
+    <ul class="dragula-container">
       {{#each tasks}}
         {{> task}}
       {{/each}}
     </ul>
-
-    <footer>
+   </div>
+   <footer>
+    <div class="footer-inner">
       {{#if currentUser}}
       <form class="new-task">
         <input type="text" name="text" placeholder="What's your task?" />
         <button class="btn submit" type="submit" name="submit">Add To List</button>
       </form>
       {{/if}}
-    </footer>
-  </div>
+    </div>
+    <script src="http://localhost:8000/node_modules/dragula/dist/dragula.js"></script>
+  </footer>
 </body>
  
 <template name="task">
