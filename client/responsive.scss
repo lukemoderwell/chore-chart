@@ -1,8 +1,16 @@
  
 @media (max-width: 600px) {
- 
-  .search {
-    width: 150px;
-    clear: both;
-  }
+
+  .login {
+	  float: none;
+	  display: block;
+	  margin: 10px 0 0 0; 
+	}
+
+  header .hide-completed {
+  	  position: absolute;
+      left: 90px;
+      top: 40px;
+      right: 0; 
+	}
 }

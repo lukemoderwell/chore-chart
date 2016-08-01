@@ -27,12 +27,12 @@ body {
 header {
   background: rgba(253,145,138,1);
   padding: 24px;
-  position: relative;
 }
 
 .header-inner, .footer-inner {
   width: 100%;
   padding: 0 2.5%; 
+  position: relative;
 }
  
 #login-buttons {
@@ -43,10 +43,11 @@ header {
   float: right;
   text-decoration: none; 
   padding: 10px 12px;
-  font-family: $mono;
   text-transform: uppercase;
   background: transparent;
   border: 1px solid rgba(0,0,0,.9);
+  margin-top: 0;
+  outline: 0; 
 }
  
 h1 {
@@ -163,8 +164,7 @@ li.private {
 header .hide-completed {
   position: absolute; 
   margin-top: 8px;
-  right: 160px; 
-  font-family: $mono;
+  right: 120px; 
 }
  
 .toggle-private {
