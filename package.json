@@ -5,6 +5,7 @@
     "start": "meteor run"
   },
   "dependencies": {
+    "@claviska/jquery-minicolors": "^2.2.4",
     "dragula": "^3.7.1",
     "meteor-node-stubs": "~0.2.0"
   }

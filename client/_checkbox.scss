@@ -1,0 +1,79 @@
+/* Taken from https://kyusuf.com/post/completely-css-custom-checkbox-radio-buttons-and-select-boxes */
+
+.control {
+  font-size: 16px;
+  position: relative;
+  display: block;
+  padding: 5px 32px 0;
+  cursor: pointer;
+}
+
+.control input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.control__indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(0,0,0,.2);
+  background: #f9f9f9;
+  border-radius: 2px;
+}
+
+/* Hover and focus states */
+.control:hover input ~ .control__indicator,
+.control input:focus ~ .control__indicator {
+  background: #f0f0f0;
+}
+
+/* Checked state */
+.control input:checked ~ .control__indicator {
+  background: darken($blue, 10%);
+}
+
+/* Hover state whilst checked */
+.control:hover input:not([disabled]):checked ~ .control__indicator,
+.control input:checked:focus ~ .control__indicator {
+  background: $blue;
+}
+
+/* Disabled state */
+.control input:disabled ~ .control__indicator {
+  pointer-events: none;
+  opacity: .6;
+  background: #e6e6e6;
+}
+
+/* Check mark */
+.control__indicator:after {
+  position: absolute;
+  display: none;
+  content: '';
+}
+
+/* Show check mark */
+.control input:checked ~ .control__indicator:after {
+  display: block;
+}
+
+/* Checkbox tick */
+.control--checkbox .control__indicator:after {
+  top: 5px;
+  left: 10px;
+  width: 6px;
+  height: 12px;
+  transform: rotate(45deg);
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+}
+
+/* Disabled tick colour */
+.control--checkbox input:disabled ~ .control__indicator:after {
+  border-color: #7b7b7b;
+}
+

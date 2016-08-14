@@ -3,19 +3,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Moderwell Todos</title>
-
   <!-- Drag n Drop CSS -->
   <link href='http://lukemoderwell.com/dist/dragula.css' rel='stylesheet' type='text/css'>
   <!-- Fonts -->
-
   <script src="https://use.typekit.net/heo6ofs.js"></script>
   <script>try{Typekit.load({ async: true });}catch(e){}</script>
-
 </head>
 
 <body>
   <header>
-    <div class="header-inner">
+    <!-- <div class="header-inner"> -->
       <h1>Moderwell Todos <span class="incomplete">({{incompleteCount}})</span></h1>
 
       <label class="hide-completed">
@@ -26,9 +23,15 @@
       <button class="login">
         {{> loginButtons}}
       </button>
-    </div>
+    <!-- </div> -->
   </header>
   <div class="container">
+   {{#if currentUser}}
+      <form class="new-task">
+        <input type="text" name="text" placeholder="Create a new task" />
+        <button class="btn submit" type="submit" name="submit">Add</button>
+      </form>
+    {{/if}}
     <ul class="dragula-container">
       {{#each tasks}}
         {{> task}}
@@ -36,26 +39,19 @@
     </ul>
    </div>
    <footer>
-    <div class="footer-inner">
-      {{#if currentUser}}
-      <form class="new-task">
-        <input type="text" name="text" placeholder="What's your task?" />
-        <button class="btn submit" type="submit" name="submit">Add</button>
-      </form>
-      {{/if}}
-    </div>
     <script src="http://lukemoderwell.com/dist/dragula.js"></script>
   </footer>
 </body>
  
 <template name="task">
   <li class="{{#if checked}}checked{{/if}} {{#if private}}private{{/if}}">
+    <label class="control control--checkbox">
+      <input type="checkbox" checked="{{checked}}" class="toggle-checked" />
+      <div class="control__indicator"></div>
+      <span class="text">{{text}}</span> <span class="user">{{username}}</span>
+    </label>
 
-    <button class="delete">&times;</button>
- 
-    <input type="checkbox" checked="{{checked}}" class="toggle-checked" />
-
-    {{#if isOwner}}
+    <!-- {{#if isOwner}}
       <button class="toggle-private">
         {{#if private}}
           Private
@@ -63,9 +59,10 @@
           Public
         {{/if}}
       </button>
-    {{/if}}
+    {{/if}} -->
  
-    <span class="text">{{text}}</span> <span class="user">{{username}}</span>
+    
+    <button class="delete">&times;</button>
   </li>
 </template>
 
